@@ -14,7 +14,7 @@ Route::middleware('auth')->group(function () {
 
         $data['judul'] = 'Dashboard';
         $data['transaksi'] = Transaksi::count();
-        $data['pemasukan'] = Transaksi::whereTypeTransaksi('pemasukan')->count();
+        $data['pendapatan'] = Transaksi::whereTypeTransaksi('pendapatan')->count();
         $data['pengeluaran'] = Transaksi::whereTypeTransaksi('pengeluaran')->count();
 
         return view('admin.admin-dashboard', $data);
